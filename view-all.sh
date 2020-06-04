@@ -16,8 +16,8 @@ else
     echo $SERVICE :: shared-$NAMESPACE
     echo '\n##Deployments'
     kubectl get deployments --namespace shared-$NAMESPACE $SERVICE
-    echo "Services"
+    echo '\n##Services'
     kubectl get services --namespace shared-$NAMESPACE $SERVICE
-    echo "Ingress"
+    echo '\n##Ingress'
     kubectl get ingress --namespace shared-$NAMESPACE $SERVICE
 fi
