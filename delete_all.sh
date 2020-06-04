@@ -1,7 +1,13 @@
 #!/bin/bash
 
-NAMESPACE=$1
-SERVICE=$2
+while getopts n:s: option
+do
+case "${option}"
+in
+n) NAMESPACE=${OPTARG};;
+s) SERVICE=${OPTARG};;
+esac
+done
 
 if [ ! -n "$SERVICE" ]
 then
