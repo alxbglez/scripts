@@ -13,7 +13,7 @@ if [ ! -n "$SERVICE" ]
 then
 	echo "$0 - Error \$SERVICE not set or NULL"
 else
-    if [ ! -n "$NAMESPACEE" ]
+    if [ ! -n "$NAMESPACE" ]
     then
         echo "$0 - Error \$NAMESPACE not set or NULL"
     else
