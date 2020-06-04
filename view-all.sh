@@ -14,7 +14,7 @@ then
     echo "$0 - Error \$NAMESPACE not set or NULL"
 else
     echo $SERVICE :: shared-$NAMESPACE
-    echo "Deployments"
+    echo '\n##Deployments'
     kubectl get deployments --namespace shared-$NAMESPACE $SERVICE
     echo "Services"
     kubectl get services --namespace shared-$NAMESPACE $SERVICE
