@@ -7,12 +7,12 @@ docker volume ls
 docker run -d -p 33060:3306 --name frd-mysql-db  -e MYSQL_ROOT_PASSWORD=sysfraud --mount src=frd-mysql-db-data,dst=/var/lib/mysql mysql
 echo 'Waiting 1m for creation'
 
-x=1
-while [ $x -le 60 ]
+x=30
+while [ $x -gt 0 ]
 do
-  echo -ne "$x sec."\\r
+  echo -ne "$x\r"
   sleep 1s
-  x=$(( $x + 1 ))
+  x=$(( $x - 1 ))
 done
 
 docker exec -i frd-mysql-db mysql -u root --password=sysfraud
