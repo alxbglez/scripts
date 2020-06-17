@@ -10,10 +10,9 @@ echo 'Waiting for creation'
 x=30
 while [ $x -gt 0 ]
 do
-  echo '$x'
+  echo "$x"
   sleep 1s
   x=$(( $x - 1 ))
 done
-echo 'go'
-
-docker exec -i frd-mysql-db mysql -u root --password=sysfraud
+echo 'Restore Accertify'
+cat accertify_dump.sql | docker exec -i frd-mysql-db -u root --password=root sysfraud
