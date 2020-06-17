@@ -10,10 +10,19 @@ echo 'Waiting 1m for creation'
 x=30
 while [ $x -gt 0 ]
 do
-  echo -ne "$x\r"
+  echo -n "$x\r"
   sleep 1s
   x=$(( $x - 1 ))
 done
 
 docker exec -i frd-mysql-db mysql -u root --password=sysfraud
+
+x=5
+while [ $x -gt 0 ]
+do
+  echo -n "$x\r"
+  sleep 1s
+  x=$(( $x - 1 ))
+done
+
 exit
